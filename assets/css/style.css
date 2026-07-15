@@ -118,23 +118,26 @@ a:focus-visible, button:focus-visible {
   flex-wrap: wrap;
 }
 
-.hero-links a {
+.hero-icon-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin: 6px;
   text-decoration: none;
-  font-size: 13px;
-  color: var(--text);
   background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 9px 16px;
-  border-radius: 8px;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  border-radius: 50%;
 }
 
-.hero-links a:hover {
-  border-color: var(--amber);
+.hero-icon-link:hover {
   background: var(--surface-hover);
+}
+
+.hero-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
 }
 
 /* ===== Section shell (reused: Selected Work / Certifications / Experience) ===== */
