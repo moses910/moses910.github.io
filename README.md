@@ -16,7 +16,7 @@ Static site (plain HTML/CSS, no build step) for `moses910.github.io`.
 
 ## Before you consider it "done"
 
-- [ ] Confirm/replace the `[confirm start date]` placeholder in `about.html` under the TriqFlow entry — I didn't have an exact date so left it as a placeholder rather than guessing.
+- [✔] Confirm/replace the `[confirm start date]` placeholder in `about.html` under the TriqFlow entry — I didn't have an exact date so left it as a placeholder rather than guessing.
 - [ ] Swap any copy you want phrased differently — everything here is a first draft based on what we discussed.
 - [ ] Real screenshots: the Selected Work cards are currently text-only. Swap in real screenshots/diagrams when ready (e.g. LambdaCostWatchdog's architecture, the fraud engine console) — there's no image markup yet, so this is an intentional next step, not a bug.
 - [ ] Point your LinkedIn / GitHub profile / old Google Sites "Get in touch" links to the new URL once you're happy with it.
