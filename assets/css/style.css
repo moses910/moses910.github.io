@@ -113,11 +113,35 @@ a:focus-visible, button:focus-visible {
 
 .hero-links {
   display: flex;
+  gap: 12px;
   gap: 14px;
   margin-top: 32px;
   flex-wrap: wrap;
 }
 
+.hero-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+
+.hero-icon-link:hover {
+  border-color: var(--amber);
+  background: var(--surface-hover);
+  transform: translateY(-1px);
+}
+
+.hero-icon-link img {
+  width: 28px;
+  height: 28px;
+  display: block;
 .hero-links a {
   display: inline-flex;
   align-items: center;
