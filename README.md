@@ -14,7 +14,7 @@ Static site (plain HTML/CSS, no build step) for `moses910.github.io`.
 3. Go to **Settings → Pages** in the repo. If the repo is named `moses910.github.io`, Pages is usually enabled automatically on the `main` branch — confirm the source is set to `main` / root.
 4. Wait 1–2 minutes, then visit `https://moses910.github.io` to confirm it's live.
 
-## Before you consider it "done"
+## Before I consider it "done"
 
 - [✔] Confirm/replace the `[confirm start date]` placeholder in `about.html` under the TriqFlow entry — I didn't have an exact date so left it as a placeholder rather than guessing.
 - [ ] Swap any copy you want phrased differently — everything here is a first draft based on what we discussed.
