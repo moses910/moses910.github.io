@@ -113,6 +113,7 @@ a:focus-visible, button:focus-visible {
 
 .hero-links {
   display: flex;
+  gap: 14px;
   margin-top: 32px;
   flex-wrap: wrap;
 }
