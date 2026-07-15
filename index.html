@@ -16,6 +16,7 @@
   <a class="brand" href="index.html">Moses Mungai<span class="dot">.</span></a>
   <ul>
     <li><a class="nav-link active" href="index.html">Home</a></li>
+    <li><a class="nav-link" href="projects.html">Projects</a></li>
     <li><a class="nav-link" href="about.html">About</a></li>
   </ul>
 </nav>
@@ -38,46 +39,49 @@
       <p class="section-eyebrow mono">// selected work</p>
       <h2 class="section-title">Systems I've built and shipped</h2>
     </div>
-    <span class="section-sub mono">4 projects · cloud &amp; automation</span>
+    <a href="projects.html" class="section-sub mono" style="text-decoration:none;color:var(--text-muted);transition:color 0.15s ease;" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--text-muted)'">4 projects · cloud &amp; automation →</a>
   </div>
 
   <div class="work-grid">
 
-    <div class="card">
+    <a class="card" href="projects.html#lambda" style="text-decoration:none;display:block;">
       <div class="status status-prod mono"><span class="dot dot-prod"></span>AWS Grant Submission</div>
       <h3>LambdaCostWatchdog</h3>
-      <p>Serverless AWS cost-optimization tool. <b>Lambda + EventBridge</b> orchestrate automated checks across 14 AWS services, with a <b>DRY_RUN safety architecture</b> so nothing gets terminated without explicit confirmation. Born from a stray Elastic IP that quietly racked up charges.</p>
+      <p>Serverless AWS cost-optimization tool. <b>Lambda + EventBridge</b> orchestrate automated checks across 14 AWS services, with a <b>DRY_RUN safety architecture</b> so nothing gets terminated without explicit confirmation.</p>
       <div class="tags mono">
         <span class="tag">AWS Lambda</span>
         <span class="tag">EventBridge</span>
         <span class="tag">boto3</span>
         <span class="tag">SNS</span>
       </div>
-    </div>
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin:14px 0 0;">View case study →</p>
+    </a>
 
-    <div class="card">
+    <a class="card" href="projects.html#fraud" style="text-decoration:none;display:block;">
       <div class="status status-prod mono"><span class="dot dot-prod"></span>Client Deployment</div>
       <h3>Triqflow Fraud Engine</h3>
-      <p>Fraud-detection console built for <b>Mwalimu National SACCO</b>, giving staff a live view into flagged transactions and risk signals. Currently being refactored from a single-file build into a modular architecture.</p>
+      <p>Fraud-detection console built for <b>Mwalimu National SACCO</b>, giving staff a live view into flagged transactions and risk signals. Being refactored into a modular architecture.</p>
       <div class="tags mono">
         <span class="tag">HTML/JS</span>
         <span class="tag">Fraud Detection</span>
         <span class="tag">SACCO Fintech</span>
       </div>
-    </div>
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin:14px 0 0;">View case study →</p>
+    </a>
 
-    <div class="card">
+    <a class="card" href="projects.html#savings" style="text-decoration:none;display:block;">
       <div class="status status-live mono"><span class="dot dot-live"></span>Live &amp; In Use</div>
       <h3>Women of Faith — Savings Tracker</h3>
-      <p>Mobile-first web app for a 6-member savings group, backed by a live Google Sheet. Five-tab interface covering <b>contribution tracking, loan management, and PDF reporting</b>, with dynamic header scanning to handle real-world sheet inconsistencies.</p>
+      <p>Mobile-first web app for a 6-member savings group, backed by a live Google Sheet. Five-tab interface covering <b>contribution tracking, loan management, and PDF reporting</b>.</p>
       <div class="tags mono">
         <span class="tag">Google Apps Script</span>
         <span class="tag">Sheets API</span>
         <span class="tag">PDF Generation</span>
       </div>
-    </div>
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin:14px 0 0;">View case study →</p>
+    </a>
 
-    <div class="card">
+    <a class="card" href="projects.html#docscan" style="text-decoration:none;display:block;">
       <div class="status status-proto mono"><span class="dot dot-proto"></span>Prototype / SaaS Exploration</div>
       <h3>DocScan</h3>
       <p>Client-side document extraction tool — parses PDFs, Word docs, and scanned images entirely in-browser, no server upload required. Explored as a standalone SaaS product.</p>
@@ -86,7 +90,8 @@
         <span class="tag">mammoth.js</span>
         <span class="tag">Tesseract.js</span>
       </div>
-    </div>
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin:14px 0 0;">View case study →</p>
+    </a>
 
   </div>
 </section>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Moses Mungai</title>
+<meta name="description" content="Selected cloud engineering and AI automation projects by Moses Mungai — LambdaCostWatchdog, Triqflow Fraud Engine, Women of Faith Savings Tracker, and DocScan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/projects.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="brand" href="index.html">Moses Mungai<span class="dot">.</span></a>
+  <ul>
+    <li><a class="nav-link" href="index.html">Home</a></li>
+    <li><a class="nav-link active" href="projects.html">Projects</a></li>
+    <li><a class="nav-link" href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<header class="hero projects-hero">
+  <p class="hero-eyebrow mono">// selected work</p>
+  <h1>Systems I've built and shipped</h1>
+  <p class="lede">Cloud infrastructure, AI automation pipelines, and web tools — each one solving a real problem. Click any card to explore the full breakdown.</p>
+  <div class="projects-filters mono">
+    <button class="filter-btn active" data-filter="all" id="filter-all">All <span class="filter-count">4</span></button>
+    <button class="filter-btn" data-filter="cloud" id="filter-cloud">Cloud</button>
+    <button class="filter-btn" data-filter="automation" id="filter-automation">Automation</button>
+    <button class="filter-btn" data-filter="web" id="filter-web">Web App</button>
+  </div>
+</header>
+
+<main class="section projects-section" id="projects">
+
+  <div class="projects-grid" id="projects-grid">
+
+    <!-- Card 1: LambdaCostWatchdog -->
+    <article
+      class="pcard"
+      id="card-lambda"
+      data-project="lambda"
+      data-category="cloud"
+      tabindex="0"
+      role="button"
+      aria-haspopup="dialog"
+      aria-label="Open LambdaCostWatchdog project details"
+    >
+      <div class="pcard-top">
+        <div class="status status-prod mono"><span class="dot dot-prod"></span>AWS Grant Submission</div>
+        <svg class="pcard-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M4 14L14 4M14 4H7M14 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2 class="pcard-title">LambdaCostWatchdog</h2>
+      <p class="pcard-excerpt">Serverless AWS cost-optimization tool that orchestrates automated checks across 14 AWS services using Lambda + EventBridge — born from a stray Elastic IP billing surprise.</p>
+      <div class="tags mono">
+        <span class="tag">AWS Lambda</span>
+        <span class="tag">EventBridge</span>
+        <span class="tag">boto3</span>
+        <span class="tag">SNS</span>
+      </div>
+      <div class="pcard-footer">
+        <span class="pcard-cta mono">View case study →</span>
+      </div>
+    </article>
+
+    <!-- Card 2: Triqflow Fraud Engine -->
+    <article
+      class="pcard"
+      id="card-fraud"
+      data-project="fraud"
+      data-category="web"
+      tabindex="0"
+      role="button"
+      aria-haspopup="dialog"
+      aria-label="Open Triqflow Fraud Engine project details"
+    >
+      <div class="pcard-top">
+        <div class="status status-prod mono"><span class="dot dot-prod"></span>Client Deployment</div>
+        <svg class="pcard-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M4 14L14 4M14 4H7M14 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2 class="pcard-title">Triqflow Fraud Engine</h2>
+      <p class="pcard-excerpt">Fraud-detection console built for Mwalimu National SACCO, giving staff a live view into flagged transactions and risk signals.</p>
+      <div class="tags mono">
+        <span class="tag">HTML/JS</span>
+        <span class="tag">Fraud Detection</span>
+        <span class="tag">SACCO Fintech</span>
+      </div>
+      <div class="pcard-footer">
+        <span class="pcard-cta mono">View case study →</span>
+      </div>
+    </article>
+
+    <!-- Card 3: Women of Faith Savings Tracker -->
+    <article
+      class="pcard"
+      id="card-savings"
+      data-project="savings"
+      data-category="web automation"
+      tabindex="0"
+      role="button"
+      aria-haspopup="dialog"
+      aria-label="Open Women of Faith Savings Tracker project details"
+    >
+      <div class="pcard-top">
+        <div class="status status-live mono"><span class="dot dot-live"></span>Live &amp; In Use</div>
+        <svg class="pcard-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M4 14L14 4M14 4H7M14 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2 class="pcard-title">Women of Faith — Savings Tracker</h2>
+      <p class="pcard-excerpt">Mobile-first web app for a 6-member savings group, backed by a live Google Sheet. Five-tab interface covering contribution tracking, loan management, and PDF reporting.</p>
+      <div class="tags mono">
+        <span class="tag">Google Apps Script</span>
+        <span class="tag">Sheets API</span>
+        <span class="tag">PDF Generation</span>
+      </div>
+      <div class="pcard-footer">
+        <span class="pcard-cta mono">View case study →</span>
+      </div>
+    </article>
+
+    <!-- Card 4: DocScan -->
+    <article
+      class="pcard"
+      id="card-docscan"
+      data-project="docscan"
+      data-category="web"
+      tabindex="0"
+      role="button"
+      aria-haspopup="dialog"
+      aria-label="Open DocScan project details"
+    >
+      <div class="pcard-top">
+        <div class="status status-proto mono"><span class="dot dot-proto"></span>Prototype / SaaS Exploration</div>
+        <svg class="pcard-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M4 14L14 4M14 4H7M14 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2 class="pcard-title">DocScan</h2>
+      <p class="pcard-excerpt">Client-side document extraction tool — parses PDFs, Word docs, and scanned images entirely in-browser, no server upload required.</p>
+      <div class="tags mono">
+        <span class="tag">PDF.js</span>
+        <span class="tag">mammoth.js</span>
+        <span class="tag">Tesseract.js</span>
+      </div>
+      <div class="pcard-footer">
+        <span class="pcard-cta mono">View case study →</span>
+      </div>
+    </article>
+
+  </div><!-- /projects-grid -->
+</main>
+
+<!-- ===== Modal Overlay ===== -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-project-title" hidden>
+  <div class="modal-window" id="modal-window">
+
+    <!-- Modal chrome bar -->
+    <div class="modal-chrome">
+      <div class="modal-traffic">
+        <button class="traffic-btn traffic-close" id="modal-close" aria-label="Close project details" title="Close">
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true"><path d="M1 1l6 6M7 1l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <span class="traffic-btn traffic-min" aria-hidden="true"></span>
+        <span class="traffic-btn traffic-max" aria-hidden="true"></span>
+      </div>
+      <div class="modal-breadcrumb mono" id="modal-breadcrumb">projects / —</div>
+      <div class="modal-nav-arrows">
+        <button class="modal-nav-btn" id="modal-prev" aria-label="Previous project">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="modal-nav-btn" id="modal-next" aria-label="Next project">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal body: injected dynamically -->
+    <div class="modal-body" id="modal-body" tabindex="-1">
+      <!-- content injected by JS -->
+    </div>
+
+  </div><!-- /modal-window -->
+</div><!-- /modal-overlay -->
+
+<footer class="site-footer">
+  <span>© 2026 Moses Mungai · Nairobi, Kenya</span>
+  <span><a href="mailto:nmungai9@gmail.com">nmungai9@gmail.com</a></span>
+</footer>
+
+<script src="assets/js/projects.js"></script>
+</body>
+</html>

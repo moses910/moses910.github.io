@@ -1,0 +1,516 @@
+/* ===================================================================
+   projects.css — Interactive Projects Page + Modal Window Styles
+   =================================================================== */
+
+/* ===== Page Hero adjustments ===== */
+.projects-hero {
+  padding-bottom: 32px;
+}
+
+/* ===== Filter buttons bar ===== */
+.projects-filters {
+  display: flex;
+  gap: 8px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'IBM Plex Mono', monospace;
+  transition: all 0.18s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.filter-btn.active {
+  background: rgba(232, 163, 61, 0.12);
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.filter-count {
+  background: rgba(232, 163, 61, 0.2);
+  color: var(--amber);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 10px;
+}
+
+/* ===== Projects Section ===== */
+.projects-section {
+  padding-top: 0;
+}
+
+/* ===== Projects Grid ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+/* ===== Project Card ===== */
+.pcard {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 26px 26px 22px;
+  cursor: pointer;
+  transition:
+    border-color 0.22s ease,
+    background 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+}
+
+.pcard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(232,163,61,0.04) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.pcard:hover,
+.pcard:focus-visible {
+  border-color: rgba(232,163,61,0.45);
+  background: var(--surface-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(232,163,61,0.1);
+  outline: none;
+}
+
+.pcard:hover::before,
+.pcard:focus-visible::before {
+  opacity: 1;
+}
+
+/* card animates out when filtered */
+.pcard.hidden {
+  display: none;
+}
+
+.pcard.fade-in {
+  animation: cardFadeIn 0.3s ease both;
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Card internals ===== */
+.pcard-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.pcard-arrow {
+  color: var(--text-muted);
+  transition: color 0.18s ease, transform 0.18s ease;
+  flex-shrink: 0;
+}
+
+.pcard:hover .pcard-arrow,
+.pcard:focus-visible .pcard-arrow {
+  color: var(--amber);
+  transform: translate(2px, -2px);
+}
+
+.pcard-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+  color: var(--text);
+}
+
+.pcard-excerpt {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 18px;
+  flex: 1;
+  line-height: 1.65;
+}
+
+.pcard-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.pcard-cta {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  transition: color 0.18s ease;
+}
+
+.pcard:hover .pcard-cta,
+.pcard:focus-visible .pcard-cta {
+  color: var(--amber);
+}
+
+/* ===== Modal Overlay ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(7, 11, 22, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: overlayIn 0.22s ease both;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ===== Modal Window ===== */
+.modal-window {
+  position: relative;
+  width: 100%;
+  max-width: 740px;
+  max-height: 85vh;
+  background: #111827;
+  border: 1px solid #253047;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.04),
+    0 32px 80px rgba(0,0,0,0.65),
+    0 8px 24px rgba(0,0,0,0.4);
+  animation: windowIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes windowIn {
+  from { opacity: 0; transform: scale(0.94) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ===== Modal Chrome / Title Bar ===== */
+.modal-chrome {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 10px 14px;
+  background: #0E1623;
+  border-bottom: 1px solid #1A2538;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.modal-traffic {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.traffic-btn {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.15s ease;
+}
+
+.traffic-close {
+  background: #FF5F57;
+  color: rgba(0,0,0,0);
+}
+
+.traffic-close:hover {
+  color: rgba(0,0,0,0.6);
+}
+
+.traffic-min {
+  background: #FFBD2E;
+}
+
+.traffic-max {
+  background: #28C840;
+}
+
+.modal-breadcrumb {
+  flex: 1;
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.modal-nav-arrows {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.modal-nav-btn {
+  width: 28px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  padding: 0;
+}
+
+.modal-nav-btn:hover {
+  background: rgba(232,163,61,0.12);
+  color: var(--amber);
+  border-color: rgba(232,163,61,0.3);
+}
+
+.modal-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ===== Modal Body ===== */
+.modal-body {
+  overflow-y: auto;
+  flex: 1;
+  padding: 32px 36px 40px;
+  scroll-behavior: smooth;
+}
+
+.modal-body:focus {
+  outline: none;
+}
+
+/* ===== Modal Content Styles ===== */
+.modal-status {
+  margin-bottom: 16px;
+}
+
+.modal-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.modal-tagline {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin: 0 0 26px;
+  line-height: 1.6;
+}
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 28px;
+}
+
+.modal-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+
+/* ===== Detail sections ===== */
+.detail-section {
+  margin-bottom: 26px;
+}
+
+.detail-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 8px;
+}
+
+.detail-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.detail-text b,
+.detail-text strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ===== Outcome metrics ===== */
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.outcome-chip {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.outcome-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--amber);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.outcome-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: block;
+  line-height: 1.4;
+}
+
+/* ===== Stack list ===== */
+.stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.stack-pill {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  color: var(--text);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+/* ===== Modal links ===== */
+.modal-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.modal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-family: 'IBM Plex Mono', monospace;
+  border-radius: 7px;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  border: 1px solid;
+}
+
+.modal-link-primary {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: #0B1220;
+  font-weight: 600;
+}
+
+.modal-link-primary:hover {
+  background: #f0b345;
+  border-color: #f0b345;
+}
+
+.modal-link-secondary {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+.modal-link-secondary:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+/* ===== Modal slide animation ===== */
+.modal-body-slide-enter {
+  animation: slideEnter 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes slideEnter {
+  from { opacity: 0; transform: translateX(18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 720px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  .modal-window { max-height: 92vh; border-radius: 12px; }
+  .modal-body { padding: 22px 20px 32px; }
+  .modal-breadcrumb { display: none; }
+  .outcomes-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 420px) {
+  .modal-overlay { padding: 0; align-items: flex-end; }
+  .modal-window { max-width: 100%; border-radius: 14px 14px 0 0; max-height: 90vh; }
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .pcard, .pcard::before, .pcard-arrow,
+  .modal-overlay, .modal-window, .modal-body-slide-enter,
+  .filter-btn {
+    animation: none !important;
+    transition: none !important;
+  }
+}
